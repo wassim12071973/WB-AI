@@ -13,7 +13,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-
+MODEL_NAME = "llama-3.1-8b-instant"
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 if not GROQ_API_KEY:
     raise RuntimeError("GROQ_API_KEY missing")
@@ -144,4 +144,5 @@ def status():
 
 @app.post("/reset")
 def reset():
+
     return JSONResponse({"reset": True})
